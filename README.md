@@ -1,6 +1,8 @@
 ## 🎬 리뷰플러스 v2.0
 
-스프링 부트(JPA, Gradle) 기반 영화 리뷰 서비스인 **리뷰플러스**의 **업그레이드 버전**
+스프링 부트(JPA, Gradle) 기반 영화 리뷰 서비스인 **리뷰플러스**의 **업그레이드 버전**    
+
+<br>
 
 ## 📚 프로젝트 소개
 - **📆 프로젝트 기간 : 2025.10.27 ~ 2025.11.28**
@@ -18,7 +20,9 @@
   - **플러터 모바일 앱**
 - **노션**: [프로젝트 상세 보고서](https://www.notion.so/Project3-Team-CGV-3-2a15547a5bd58194b4c4f0c79411aeba)
 
-## 🛠 기술 스택
+<br>
+
+## 🛠 기술 스택   
 ### IDE
 ![Spring Tool Suite](https://img.shields.io/badge/Spring%20Tool%20Suite%204-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![Android Studio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white)
@@ -59,9 +63,10 @@
 ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
 
 ### 협업 툴
-![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
+![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)     
 
 ---
+<br>
 
 ## 💻 화면 구성
 ### 🎬 메인
@@ -80,8 +85,9 @@
 ### 🛠 관리자 페이지
 | 회원 관리 | 영화 관리 | 리뷰 관리
 |------------|------------|------------|
-| ![userlist png](./img/userlist.png) | ![movielist png](./img/movielist.png) | ![reviewlist png](./img/reviewlist.png)
+| ![userlist png](./img/userlist.png) | ![movielist png](./img/movielist.png) | ![reviewlist png](./img/reviewlist.png)   
 
+<br>
 
 ## 디렉토리 구조
 ```bash
