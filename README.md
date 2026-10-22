@@ -18,7 +18,7 @@
   - 사용자 - **리뷰**, **평점**, **좋아요** 기능 + (**구글 로그인**/**카카오 로그인** 기능, **대댓글** 기능)
   - 관리자 - 전체 DB 데이터 CRUD 기능
   - **플러터 모바일 앱**
-- **노션**: [프로젝트 상세 보고서](https://www.notion.so/Project3-Team-CGV-3-2a15547a5bd58194b4c4f0c79411aeba)
+- **Notion**: [프로젝트 상세 보고서](https://www.notion.so/Project3-Team-CGV-3-2a15547a5bd58194b4c4f0c79411aeba)
 
 <br>
 
@@ -69,23 +69,7 @@
 <br>
 
 ## 💻 화면 구성
-### 🎬 메인
-![main.png](./img/main.png)
-
-### 🔑 로그인 / 회원가입
-| 로그인 | 회원가입 |
-|--------|-----------|
-| ![login.png](./img/login.png) | ![register.png](./img/register.png) |
-
-### 🎬 영화 검색 / 영화 상세
-| 검색 | 상세 |
-|------|------|
-| ![search.png](./img/result.png) | ![movie.png](./img/moviedetail.png) |
-
-### 🛠 관리자 페이지
-| 회원 관리 | 영화 관리 | 리뷰 관리
-|------------|------------|------------|
-| ![userlist.png](./img/userlist.png) | ![movielist.png](./img/movielist.png) | ![reviewlist.png](./img/reviewlist.png)   
+ **Notion**: [프로젝트 화면 설계서]([https://www.notion.so/Project3-Team-CGV-3-2a15547a5bd58194b4c4f0c79411aeba](https://app.notion.com/p/2a15547a5bd581d89b38c632782e1bcc?source=copy_link))
 
 <br>
 
