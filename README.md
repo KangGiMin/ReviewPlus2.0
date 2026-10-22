@@ -70,22 +70,22 @@
 
 ## 💻 화면 구성
 ### 🎬 메인
-![main png](./img/main.png)
+![main.png](./img/main.png)
 
 ### 🔑 로그인 / 회원가입
 | 로그인 | 회원가입 |
 |--------|-----------|
-| ![login png](./img/login.png) | ![register png](./img/register.png) |
+| ![login.png](./img/login.png) | ![register.png](./img/register.png) |
 
 ### 🎬 영화 검색 / 영화 상세
 | 검색 | 상세 |
 |------|------|
-| ![search png](./img/result.png) | ![movie png](./img/moviedetail.png) |
+| ![search.png](./img/result.png) | ![movie.png](./img/moviedetail.png) |
 
 ### 🛠 관리자 페이지
 | 회원 관리 | 영화 관리 | 리뷰 관리
 |------------|------------|------------|
-| ![userlist png](./img/userlist.png) | ![movielist png](./img/movielist.png) | ![reviewlist png](./img/reviewlist.png)   
+| ![userlist.png](./img/userlist.png) | ![movielist.png](./img/movielist.png) | ![reviewlist.png](./img/reviewlist.png)   
 
 <br>
 
