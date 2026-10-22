@@ -69,7 +69,7 @@
 <br>
 
 ## 💻 화면 구성
- **Notion**: [프로젝트 화면 설계서]([https://www.notion.so/Project3-Team-CGV-3-2a15547a5bd58194b4c4f0c79411aeba](https://app.notion.com/p/2a15547a5bd581d89b38c632782e1bcc?source=copy_link)
+ **Notion**: [프로젝트 화면 설계서](https://app.notion.com/p/2a15547a5bd581d89b38c632782e1bcc?source=copy_link)
 
 <br>
 
