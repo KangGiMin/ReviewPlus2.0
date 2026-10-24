@@ -40,8 +40,8 @@
 
 ### 라이브러리
 ![JQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
-[**DataTables.js**](https://datatables.net/)
-
+![DataTables.js](https://img.shields.io/badge/DataTables.js-100000?style=for-the-badge&logo=&logoColor=white&labelColor=1717F4&color=1717F4)
+![Flickity](https://img.shields.io/badge/Flickity-100000?style=for-the-badge&logo=&logoColor=white&labelColor=FFBF0D&color=FFBF0D)
 
 
 
@@ -216,6 +216,7 @@
  ┃ ┃ ┃ ┣ 📜admin_review_detail.html
  ┃ ┃ ┃ ┣ 📜admin_user.html
  ┃ ┃ ┃ ┣ 📜admin_user_detail.html
+ ┃ ┃ ┃ ┣ 📜Social_user_dormant_access.html
  ┃ ┃ ┃ ┗ 📜user_dormant_access.html
  ┃ ┃ ┣ 📂index
  ┃ ┃ ┃ ┗ 📜index.html
@@ -230,6 +231,7 @@
  ┃ ┃ ┃ ┣ 📜user_mypage.html
  ┃ ┃ ┃ ┣ 📜user_newjoin.html
  ┃ ┃ ┃ ┗ 📜user_socialEdit.html
+ ┃ ┣ 📜application-prod.properties
  ┃ ┣ 📜application.properties
  ┃ ┣ 📜application.yml
  ┃ ┗ 📜schema-oracle.sql

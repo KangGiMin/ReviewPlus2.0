@@ -172,18 +172,21 @@ function createReviewHtml(review) {
     let profileSrc = `/images/profile/${storedFileName}`;
     
     const isReviewLiked = review.reviewLiked; //좋아요 상태
-	const likeCount = review.likeCount || 0; //초기 좋아요 개수
-	const heartSymbol = isReviewLiked ? '❤' : '🤍';
-	
+   const likeCount = review.likeCount || 0; //초기 좋아요 개수
+   const heartSymbol = isReviewLiked ? '❤' : '🤍';
+   
     // 로그인한 사용자 ID (전역 변수 loggedInUserId를 사용한다고 가정)
     const currentUserId = (typeof loggedInUserId !== 'undefined' && loggedInUserId !== null) 
                           ? Number(loggedInUserId) 
                           : null;
     const reviewAuthorId = Number(review.userId);
     if (currentUserId && currentUserId === reviewAuthorId) {
+        // 🌟 수정 1: 버튼 스타일 조정 (가로 배열을 위해 세로 버튼 스타일 제거)
         restrictedButtonsHtml = `
-                <button type="button" class="edit-btn" onclick="openEditModal(${review.reviewId})">수정</button>
-                <button type="button" class="delete-btn" onclick="deleteReview(${review.reviewId})">삭제</button>
+                <button type="button" class="edit-btn" onclick="openEditModal(${review.reviewId})"
+                    style="width: 50px; text-align: center; padding: 5px; border-radius: 5px;">수정</button>
+                <button type="button" class="delete-btn" onclick="deleteReview(${review.reviewId})"
+                    style="width: 50px; text-align: center; padding: 5px; border-radius: 5px;">삭제</button>
         `;
     }
     
@@ -195,28 +198,29 @@ function createReviewHtml(review) {
     </span>
     `;
    
-	
-	const likeButtonHtml = `
-	    <button type="button" class="Reviewlike-btn" 
-	        data-review-id="${review.reviewId}"
-	        onclick="ReviewtoggleLike(this)"
-	        style="background: none; 
-	        border: none;
-	        cursor: pointer;
-	        font-size: 1.2em;
-	    	margin-right: 15px;">
-	            <span class="heart-symbol" style="color: ${isReviewLiked ? 'red' : 'black'};">
-		            ${heartSymbol}
-		        </span>
-	             <span class="like-count" style="color: white; margin-left: 5px;"> 
-		            ${likeCount}
-		        </span>
-	        </button>
-	 `;
+   
+   const likeButtonHtml = `
+       <button type="button" class="Reviewlike-btn" 
+           data-review-id="${review.reviewId}"
+           onclick="ReviewtoggleLike(this)"
+           style="background: none; 
+           border: none;
+           cursor: pointer;
+           font-size: 1.2em;
+          margin-right: 15px;">
+               <span class="heart-symbol" style="color: ${isReviewLiked ? 'red' : 'black'};">
+                  ${heartSymbol}
+              </span>
+                <span class="like-count" style="color: white; margin-left: 5px;"> 
+                  ${likeCount}
+              </span>
+           </button>
+    `;
     
     
+    // 🌟 수정 2: review-actions에 display: flex와 gap 추가하여 버튼 가로 배열 및 간격 조정
     actionButtonsHtml = `
-       <div class="review-actions">
+       <div class="review-actions" style="display: flex; gap: 10px;">
           ${restrictedButtonsHtml}
        </div>
     `;
@@ -226,59 +230,64 @@ function createReviewHtml(review) {
               style = "color:white">
         </div>
     `;
-
+   
      return `
          <div class = "review-box" id="review-${review.reviewId}" data-review-id="${review.reviewId}" 
                         style=" box-shadow:0 5px 8px rgba(0,0,0,0.2);  margin-bottom: 10px; padding: 10px;
-                        color: white; border-radius: 15px; ">
-
+                        color: white; border-radius: 15px; border-bottom: 1px solid grey; ">
+                    
                         
-               <div class="review-profile-area" style="margin-right: 15px;">
-				    <span onclick="toggleActionButtons(this)" 
-				    style = "cursor:pointer; margin-left: 10px; margin-right:10px; font-size: 25px; color:gray;
-				    	border: 1px; width:20px;">
-				    	⁞
-				    </span>
-				    
-                    <div id="actionButtonsContainer" 
-				     style="display: none; 
-				            top: 100%; 
-				            left: 0;
-				            background: white; 
-				            border: 1px solid #ccc; 
-				            padding: 15px; 
-				            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-				            z-index: 100;">
-				    ${actionButtonsHtml}
-				</div>
-				    
-				    
+                <div class="review-header-container" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                
+                    <div class="review-profile-area" style="display: flex; align-items: flex-start; margin-right: 15px;">
                    <img id = "reviewUserProfile" class="profile-image" src="${profileSrc}" alt="${review.nickname}님의 프로필">
                    <div class="profile-info-text">
                        <table>
                             <tr>
                                <td><span>${review.nickname}</span></td>
                             </tr>
-                               <tr><td><span>${starHtml}</span></td></tr>
+                               <tr><td><span id ="reviewsRating">${starHtml}</span></td></tr>
                             <tr><td><span style = "color:gray">${review.regDate}</span></td></tr>
                       </table>
                    </div>
              </div>
+                    
+                    <div class="review-actions-area" style="position: relative;">
+                        <span onclick="toggleActionButtons(this)" 
+                            style = "cursor:pointer; font-size: 25px; color:gray; padding: 0 5px;">
+                            ⁝
+                        </span>
+                        
+                        <div id="actionButtonsContainer" 
+                            style="display: none; 
+                                position: absolute; /* 절대 위치로 ⁝ 버튼 아래에 배치 */
+                                top: 100%; 
+                        text-align: right;
+                                right: -30px; /* 오른쪽 끝 정렬 */
+                                
+                        width: 130px; /* 버튼 2개 + 간격 + 여백을 수용할 수 있도록 너비 확장 */                        
+                                z-index: 100;">
+                            ${actionButtonsHtml}
+                        </div>
+                    </div>
+                
+                </div>
+               
                <table>
                    <tr><td><p 
                    style="overflow-wrap: break-word; 
- 						  word-break: break-all;">${review.comment}</p></td></tr>
+                     word-break: break-all;">${review.comment}</p></td></tr>
                </table>
                
                <div class="review-actions">
-               	  ${likeButtonHtml} 
-		          ${replyButtonHtml}
-		       </div>
+                    ${likeButtonHtml} 
+                ${replyButtonHtml}
+             </div>
          <div id="reply-form-for-${review.reviewId}" class="reply-form-container reply-form-hidden">
-         	<hr style="border:0.5px solid #565656;">
+            <hr style="border:0.5px solid #565656;">
              <textarea class="ReplyComment" id="reply-comment-${review.reviewId}" placeholder="댓글을 작성해주세요.400자 제한"
                                                                    maxlength="400"></textarea>
-             <button onclick="registerReply(${review.reviewId},'${review.nickname}')">등록</button>
+             <button class="registerReply-btn" onclick="registerReply(${review.reviewId},'${review.nickname}')">등록</button>
          </div>
          ${replySectionHtml}
    `;
@@ -287,31 +296,31 @@ function createReviewHtml(review) {
 
 
 function ReviewtoggleLike(buttonEl){
-	//리뷰 Id 가져오기
-	const reviewId = buttonEl.getAttribute('data-review-id');
-	const url = `/api/reviews/${reviewId}/likes`;
-	
-	
-	//로딩 중임을 표시
-	buttonEl.disabled = true;
-	
-	fetch(url,{
-		method: 'POST',
-		headers: {
-			'Content-Type' : 'application/json',
-		},
-	})
-	.then(response => {
-		if(!response.ok){
-			throw new Error(`HTTP 오류 발생: ${response.status}`);
-		}
-		return response.json();
-	})
-	.then(data => {
-		const { isReviewLiked, likeCount } = data;
-		//버튼 텍스트 (하트 모양 및 개수) 업데이트
-		const heartSymbol = isReviewLiked ? '❤' : '🤍';
-		buttonEl.innerHTML = `
+   //리뷰 Id 가져오기
+   const reviewId = buttonEl.getAttribute('data-review-id');
+   const url = `/api/reviews/${reviewId}/likes`;
+   
+   
+   //로딩 중임을 표시
+   buttonEl.disabled = true;
+   
+   fetch(url,{
+      method: 'POST',
+      headers: {
+         'Content-Type' : 'application/json',
+      },
+   })
+   .then(response => {
+      if(!response.ok){
+         throw new Error(`HTTP 오류 발생: ${response.status}`);
+      }
+      return response.json();
+   })
+   .then(data => {
+      const { isReviewLiked, likeCount } = data;
+      //버튼 텍스트 (하트 모양 및 개수) 업데이트
+      const heartSymbol = isReviewLiked ? '❤' : '🤍';
+      buttonEl.innerHTML = `
         <span class="heart-symbol" style="color: ${isReviewLiked ? 'red' : 'black'};">
             ${heartSymbol}
         </span>
@@ -319,22 +328,23 @@ function ReviewtoggleLike(buttonEl){
             ${likeCount}
         </span>
     `;
-		buttonEl.disabled = false;
-		
-		//로그
-		console.log(`좋아요 상태: ${isReviewLiked}, 총 개수: ${likeCount}`);
-	})
-	.catch(error => {
-		console.error('좋아요 토글 중 에러 발생:', error);
-		alert('좋아요 처리에 실패했습니다.');
-		buttonEl.disabled = false;// 에러 발생 시 버튼 활성화
-	})
+      buttonEl.disabled = false;
+      
+      //로그
+      console.log(`좋아요 상태: ${isReviewLiked}, 총 개수: ${likeCount}`);
+   })
+   .catch(error => {
+      console.error('좋아요 토글 중 에러 발생:', error);
+      alert('좋아요 처리에 실패했습니다.');
+      buttonEl.disabled = false;// 에러 발생 시 버튼 활성화
+   })
 }
 
 //==========================================================
 function toggleActionButtons(buttonElement) {
-        const reviewArea = buttonElement.closest('.review-profile-area');
-        const container = reviewArea.querySelector('#actionButtonsContainer');
+        // 🌟 수정: buttonElement.closest()를 사용하여 가장 가까운 액션 영역 컨테이너(review-actions-area)를 찾도록 수정
+        const actionArea = buttonElement.closest('.review-actions-area');
+        const container = actionArea.querySelector('#actionButtonsContainer');
 
         if (!container) {
             console.error("액션 버튼 컨테이너를 찾을 수 없습니다.");
