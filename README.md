@@ -65,11 +65,18 @@
 ### 협업 툴
 ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)     
 
----
 <br>
 
 ## 💻 화면 구성
- **Notion**: [프로젝트 화면 설계서](https://app.notion.com/p/2a15547a5bd581d89b38c632782e1bcc?source=copy_link)
+
+| 구분 | 웹(Web) 화면 | 앱(App) 화면 | 기능 및 설명 |
+| :---: | :---: | :---: | :--- |
+| **메인 화면** | <img src="웹 매인화면.png" width="250" alt="웹 메인"> | <img src="앱 메인화면.png" width="150" alt="앱 메인"> | 🎬 최신/인기 영화 목록 및 맞춤 추천 제공<br>📌 한눈에 들어오는 이벤트 및 공지사항 배너 |
+| **영화 검색** | <img src="웹 영화 검색 화면.png" width="250" alt="웹 검색"> | <img src="앱 영화 목록 페이지.png" width="150" alt="앱 검색"> | 🔍 영화 제목 및 키워드 기반 검색 기능<br>⚡ 장르별, 연도별 필터링으로 원하는 영화 찾기 |
+| **영화 상세 페이지** | <img src="웹 영화 상세페이지.png" width="250" alt="웹 상세"> | <img src="앱 영화 상세 페이지.png" width="150" alt="앱 상세"> | 📝 영화 포스터, 줄거리, 출연진 등 상세 정보<br>⭐ 다른 유저들의 리뷰 확인 및 내 평점/리뷰 작성 |
+| **유저 정보<br>(마이페이지)** | <img src="웹 마이페이지.png" width="250" alt="웹 유저정보"> | <img src="앱 마이페이지.png" width="150" alt="앱 유저정보"> | 👤 내 프로필 정보 조회 및 수정<br>❤️ 내가 찜한 영화 목록 및 작성한 리뷰 모아보기 |
+| **관리자 페이지** | <img src="웹 관리자 페이지.png" width="250" alt="웹 관리자"> | - | 🛠️ 전체 가입 유저 관리 및 악성 리뷰 필터링 (웹 전용)<br>📊 영화 데이터(DB) 추가 및 등록 정보 수정 |
+
 
 <br>
 
